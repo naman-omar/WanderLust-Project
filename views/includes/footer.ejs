@@ -1,0 +1,36 @@
+<footer>
+    <div class="footer-top">
+        <a href="/listings">Move to top</a>
+    </div>
+    <div class="footer">
+        <div class="footer-socials">
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-linkedin"></i>
+        </div>
+        <div class="footer-brand">&#169; WanderLust Private Limited</div>
+        <div class="footer-links">
+            Privacy&nbsp;Terms
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Function to show or hide the footer-top section based on the current URL
+    function toggleFooterTop() {
+        const footerTop = document.getElementsByClassName('footer-top')[0];
+        const currentPath = window.location.pathname;
+
+        if (currentPath === '/listings') {
+            footerTop.style.display = 'block';
+        } else {
+            footerTop.style.display = 'none';
+        }
+    }
+
+    // Call the function to set the initial state
+    toggleFooterTop();
+
+    // Optional: Listen to URL changes and toggle the footer-top section
+    window.addEventListener('popstate', toggleFooterTop);
+</script>
