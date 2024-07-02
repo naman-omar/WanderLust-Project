@@ -263,13 +263,16 @@ body{
     #login,#signup{
         margin-left:18vw;
     }
+    #flash .alert,#error .alert{
+        width:20rem;
+    }
 }
 @media (max-width:420px){
     #login,#signup{
         margin-left:10vw;
     }
     #show-less-btn,#show-more-btn{
-        width: 5rem;
+        width: 10rem;
         position: relative;
         right: 2rem;
         margin-left: 0;

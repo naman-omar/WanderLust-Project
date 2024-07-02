@@ -27,6 +27,7 @@ app.use(express.static(path.join(__dirname,"public")));
 app.use(express.urlencoded({extended: true}));
 app.engine("ejs",ejsMate);
 
+const mongoUrl = 'mongodb://127.0.0.1:27017/test';
 const dbUrl = process.env.ATLASDB_URL;
 
 main().

@@ -53,13 +53,19 @@ module.exports.editForm = async (req,res)=>{
 
 module.exports.editListing = async (req,res)=>{
     let {id} = req.params;
+    const response = await geocodingClient.forwardGeocode({
+        query: req.body.listing.location,
+        limit: 1
+    })
+    .send();
     let newListing = await Listing.findByIdAndUpdate(id, {...req.body.listing},{new:true});
+    newListing.geometry = response.body.features[0].geometry;
     if(req.file){
         let url = req.file.path;
         let filename = req.file.filename;
         newListing.image = {url,filename};
-        await newListing.save();
     }
+    await newListing.save();
     req.flash("success","Listing Updated!");
     res.redirect(`/listings/${id}`);
 };
