@@ -85,7 +85,9 @@
             </div>
         </div>
         <div class="col-lg-6 offset-8">
+            <% if(listing.reviews.length > 4){ %>
             <button class="mb-2" id="show-more-btn">Show more&nbsp;&nbsp;<i style="display: inline; color: grey;" class="fa-solid fa-forward"></i></button>
+            <% } %>
             <button class="mb-2" id="show-less-btn" style="display: none;">Show less&nbsp;&nbsp;<i style="display: inline; color: grey;" class="fa-solid fa-backward"></i></button>
         </div>
     <% } %>
