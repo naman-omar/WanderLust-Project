@@ -2,7 +2,7 @@
 <% layout("/layouts/boilerplate.ejs") %>
 <body>
 
-    <div class="filters">
+    <!-- <div class="filters">
         <div id="filter">
             <i class="fa-solid fa-fire"></i>
             <p>Trending</p>
@@ -51,7 +51,8 @@
             <label class="form-check-label" for="flexSwitchCheckDefault"><span>Display taxes</span></label>
             <input class="form-check-input ms-2 me-2" type="checkbox" role="switch" id="flexSwitchCheckDefault">
         </div>
-    </div>
+    </div> -->
+    <h3 class="mt-3">All Listings</h3>
     <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-2">
         <% for(let listing of allListings){ %>
             <a href="/listings/<%= listing._id %>" class="image-link">
@@ -68,7 +69,7 @@
             </a>
         <% } %>
     </div>
-    <script>
+    <!-- <script>
         let taxSwitch = document.getElementById("flexSwitchCheckDefault");
         let texts = document.getElementsByClassName("taxes");
         taxSwitch.addEventListener("click",()=>{
@@ -81,5 +82,5 @@
                 }
             }
         });
-    </script>
+    </script> -->
 </body>
